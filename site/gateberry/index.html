@@ -1,0 +1,1021 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for Industrial Shield PLCs and related hardware.">
+      
+      
+        <meta name="author" content="Industrial Shield">
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="gateberry-features-communications/">
+      
+      
+      <link rel="icon" href="../assets/industrial-shields/logo.webp">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>GateBerry - Industrial Shields Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../custom/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#GateBerry" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Industrial Shields Documentation" class="md-header__button md-logo" aria-label="Industrial Shields Documentation" data-md-component="logo">
+      
+  <img src="../assets/industrial-shields/logo.webp" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Industrial Shields Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              GateBerry
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="green"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Industrial Shields Documentation" class="md-nav__button md-logo" aria-label="Industrial Shields Documentation" data-md-component="logo">
+      
+  <img src="../assets/industrial-shields/logo.webp" alt="logo">
+
+    </a>
+    Industrial Shields Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Devices Family
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Devices Family
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="./" class="md-nav__link md-nav__link--active">
+              
+  
+  
+  <span class="md-ellipsis">
+    GateBerry
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link md-nav__link--active" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            GateBerry
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="gateberry-features-communications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Features & Communications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="gateberry-expansion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Expansion Boards
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#Pinout" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pinout
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Technical-Features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Technical Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Block-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      Block diagram
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Usage-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage environments
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Measures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Measures
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Power-supply" class="md-nav__link">
+    <span class="md-ellipsis">
+      Power supply
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Custom-configurations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom configurations
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="GateBerry">GateBerry<a class="headerlink" href="#GateBerry" title="Permanent link">&para;</a></h1>
+<div style="display: flex; align-items: flex-start; flex-wrap: wrap;">
+  <div style="flex: 1 1 40%; min-width: 250px; text-align: left;">
+    <p>
+GateBerry is a compact PLC built on the Raspberry Pi platform, combining the flexibility of open computing with industrial-grade reliability. Featuring an integrated UPS, RS-485 interface, 5V I²C bus, and real-time clock, it ensures continuous operation and seamless communication. With an expansion slot for and aditional communication like: LoRa, CAN, 4G, and more, GateBerry is the perfect bridge between IoT innovation and industrial automation.
+    </p>
+  </div>
+  <div style="flex: 1 1 50%; min-width: 300px;">
+     <img id="placeholder" src="../assets/plc-images/gateberry.png" style="width: 100%; height: 500px; object-fit: contain; display: block;" alt="placeholder" />
+  </div>
+</div>
+
+<details class="info">
+<summary>What is included on purchase (default product)</summary>
+<ul>
+<li>1x GateBerry (2,4 or 8 GB RAM, selectable at the moment of purchase)</li>
+<li>1x Screw connector (2 pin)</li>
+<li>1x Push-in connector (6 pin)</li>
+<li>1x MicroSD 20GB (Industrial Grade)(Incude: Debian Bookworm 64 bit (With custom configurations))</li>
+</ul>
+<p><em>The pack includes an antenna in case the product is equipped with additional communication that requires it.</em></p>
+</details>
+<div class="admonition requirements">
+<p class="admonition-title">Requirements to use</p>
+<ul>
+<li>1x GateBerry </li>
+<li>1x Ethernet wire (ssh connection) or 1x Keyboard &amp; mouse (wtih desktop interfice) </li>
+<li>DC Power supply (12V-24V)</li>
+</ul>
+</div>
+<h2 id="Pinout">Pinout<a class="headerlink" href="#Pinout" title="Permanent link">&para;</a></h2>
+<figure>
+<img alt="" src="../assets/pinout-diagrams/gateberry.svg" width="65%" />
+<br />
+<!-- <figcaption>Image caption</figcaption> -->
+
+
+</figure>
+<h2 id="Technical-Features">Technical Features<a class="headerlink" href="#Technical-Features" title="Permanent link">&para;</a></h2>
+<table>
+  <tr><td><b>Board </b></td><td>Original Raspberry Pi 4B</td></tr>
+  <tr><td><b>CPU </b></td><td>Broadcom BCM2711, Quad core (ARM v8) 64-bit SoC</td></tr>
+  <tr><td><b>Clock speed </b></td><td>1.8 GHz</td></tr>
+  <tr><td><b>RAM </b></td><td>2GB | 4GB | 8GB</td></tr>
+  <tr><td><b>Storage </b></td><td>MicroSD 20GB (Industrial Grade)(Incude: Debian Bookworm 64 bit (<a href="#Custom-configurations">With custom configurations</a>))</td></tr>
+  <tr><td><b>Cooling sistem </b></td><td>Heat sink included in TS35 DIN Rail</td></tr>
+  <tr><td><b><a href="/gateberry/gateberry-features-communications/#UPS">UPS </a></b></td><td>Controlled by software to safely shutdown the Raspberry PI when power failure</td></tr>
+  <tr><td><b><a href="/gateberry/gateberry-features-communications/#RTC">RTC </a></b></td><td> PCF85363 Real Time Clock, powered with button battery included (CR1216 or CR1220)</td></tr>
+  <tr><td><b>USB </b></td><td>x2 USB-A 2.0, x2 USB-A 3.0</td></tr>
+  <tr><td><b>Ethernet </b></td><td>x1 Gbit Ethernet, RJ45 connector</td></tr>
+  <tr><td><b><a href="/gateberry/gateberry-features-communications/#RS485">RS485 </a></b></td><td>x1 RS485 interfice (half-duplex) with software switchable 120Ω termination resistor</td></tr>
+  <tr><td><b><a href="/gateberry/gateberry-features-communications/#I²C">I²C </a></b></td><td>5V I²C bus, direct from Raspberry PI board. Address 0x51 is in use</td></tr>
+</table>
+
+<h2 id="Block-diagram">Block diagram<a class="headerlink" href="#Block-diagram" title="Permanent link">&para;</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">General</label><label for="__tabbed_1_2">Expansion Board Connections</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><figure markdown="span">
+<img alt="" src="../assets/diagrames-blocs/diagrama-blocs-gateberry-general.svg" />
+</figure></p>
+</div>
+<div class="tabbed-block">
+<p><figure markdown="span">
+<img alt="" src="../assets/diagrames-blocs/diagrama-blocs-gateberry-exp-board.svg" />
+</figure></p>
+</div>
+</div>
+</div>
+<h2 id="Usage-environments">Usage environments<a class="headerlink" href="#Usage-environments" title="Permanent link">&para;</a></h2>
+<!-- 
+| Parameter                     | Value |
+| ----------------------------- | ----- |
+| Operating temperature         | x     |
+| Storage temperature           | x     |
+| IP protection                 | x     |
+| Dielectric strength           | x     |
+| Permissible relative humidity | x     |
+| Vibration resistance          | x     |
+| Impact resistance             | x     | 
+-->
+
+<!-- Dades extretes de georgina (all) y andres (dielectric test) -->
+
+<table>
+  <tr><td><b>IP protection </b></td><td>IP 20</td></tr>
+  <tr><td><b>Storage temperature </b></td><td>0 to 60 ºC</td></tr>
+  <tr><td><b>Ambient environment (operating) </b></td><td>0 to 55ºC with no corrosive gas.<br> The dry heat test is performed at 55 °C for 300 hours under load, ensuring stable operation and long-term reliability.</td></tr>
+  <tr><td><b>Ambient humidity (operating temperature) </b></td><td>10 % to 95 % (no condensation).<br> The equipment maintains correct operation under ambient humidity conditions up to 95 % RH in the cyclic damp-heat test (35 °C to 25 °C for 1000 hours), without degradation of performance</td></tr>
+  <tr><td><b>Dielectric strength </b></td><td>The dielectric withstands a leakage current of less than 1 mA when a voltage of 1200 V DC is applied for 2 seconds.</td></tr>
+  <tr><td><b>Vibration resistance </b></td><td>The equipment withstands continuous vibration from 5 to 9 Hz at 1.75 mm amplitude and from 9 to 150 Hz at 4.9 m/s² acceleration, in accordance with EN 61131-2.</td></tr>
+  <tr><td><b>Inpact resistance </b></td><td>A shock (impact) test of up to 147 m/s² (15 g) applied three times in each of the X, Y, and Z directions.</td></tr>
+</table>
+
+<h2 id="Measures">Measures<a class="headerlink" href="#Measures" title="Permanent link">&para;</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Technical Drawing</label><label for="__tabbed_2_2">Data</label><label for="__tabbed_2_3">Assembly recommendations</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><figure markdown="span">
+  <img alt="" src="../assets/mesures/mesures-gateberry.svg#only-light" width="85%" />
+  <img alt="" src="../assets/mesures/mesures-gateberry-bm.svg#only-dark" width="85%" />
+  <!-- <figcaption>Image caption</figcaption> -->
+</figure></p>
+</div>
+<div class="tabbed-block">
+<!-- 
+| Parameter            | Value                      |
+| -------------------- | -------------------------- |
+| Dimensions H x W x D | 91 x 71 x 62 mm            |
+| Weight               | 237 g with Expansion board |
+| DIN Rail             | TS35                       | 
+-->
+<p><table>
+    <tr><td><b>Dimensions </b></td><td>91 x 71 x 62 mm (witout connectors)</td></tr>
+    <tr><td><b>Weight </b></td><td>~221 g (without expansion board)</td></tr>
+    <tr><td><b>DIN Rail </b></td><td>TS35</td></tr>
+</table></p>
+<!-- 
+<table style="width:auto; border-collapse: collapse;">
+  <tr>
+    <td style="padding: 6px 12px; font-weight: bold; background-color: var(--md-primary-fg-color); color: white;">Dimensions</td>
+    <td style="padding: 6px 12px;"> 91 x 71 x 62 mm (without connectors)</td>
+  </tr>
+  <tr>
+    <td style="padding: 6px 12px; font-weight: bold; background-color: var(--md-primary-fg-color); color: white;">Weight</td>
+    <td style="padding: 6px 12px;"> 237 g (without expansion board) </td>
+  </tr>
+  <tr>
+    <td style="padding: 6px 12px; font-weight: bold; background-color: var(--md-primary-fg-color); color: white;">DIN Rail</td>
+    <td style="padding: 6px 12px;">TS35</td>
+  </tr>
+</table> 
+-->
+</div>
+<div class="tabbed-block">
+<p><figure markdown="span">
+  <img alt="" src="../assets/mesures/distancia-gateberry.svg#only-light" width="85%" />
+  <img alt="" src="../assets/mesures/distancia-gateberry-bm.svg#only-dark" width="85%" />
+  <!-- <figcaption>Image caption</figcaption> -->
+</figure></p>
+</div>
+</div>
+</div>
+<h2 id="Power-supply">Power supply<a class="headerlink" href="#Power-supply" title="Permanent link">&para;</a></h2>
+<p>The GateBerry PLC is designed to be powered at 24 Vdc, however the power supply range is 12 to 24 Vdc.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Exceeding these limits may cause the equipment to malfunction, or even end up being damaged.</p>
+</div>
+<p>Next, a simple diagram is shown to see how to connect a power supply to any Industrial Shields unit.</p>
+<figure style="padding: 50px">
+  <img alt="" src="../assets/pinout-diagrams/gateberry_ps.svg" width="70%" />
+    <!-- <figcaption>Image caption</figcaption> -->
+</figure>
+<h3 id="Consumption-characteristics">Consumption characteristics<a class="headerlink" href="#Consumption-characteristics" title="Permanent link">&para;</a></h3>
+<p>This report explores how different GateBerry consume power during idle and stress scenarios. Understanding these patterns is crucial for optimizing efficiency in industrial applications.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Stand-by mode</label><label for="__tabbed_3_2">Stress mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>In this scenario, the GateBerry is powered on, with all pins and communications turned off. This test measures the baseline power consumption when the device is idle and not actively engaged in any processing or other non-basic tasks.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">VOLTAGE (V)</th>
+<th style="text-align: center;">CURRENT (mA)</th>
+<th style="text-align: center;">POWER (W)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">24</td>
+<td style="text-align: center;">~400</td>
+<td style="text-align: center;">~9.6</td>
+</tr>
+<tr>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">~1000</td>
+<td style="text-align: center;">~12</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<p>Under stress conditions, the GateBerry is subjected to intensive computational tasks or high-demand processes. This test evaluates the peak power consumption when the device is operating at its maximum capacity, providing valuable information for scenarios where the PLC is under heavy load. This test is done using the <code>stress-ng</code> comand.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">VOLTAGE (V)</th>
+<th style="text-align: center;">CURRENT (mA)</th>
+<th style="text-align: center;">POWER (W)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">24</td>
+<td style="text-align: center;">~750</td>
+<td style="text-align: center;">~18</td>
+</tr>
+<tr>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">~1900</td>
+<td style="text-align: center;">~22.8</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>All of these calculations are approximate and have been measured using the <code>standard GateBerry</code> product, a <code>Raspberry PI 4 Model B with 2 GB RAM</code>. Several factors can affect power consumption, for example:</p>
+<ul>
+<li>Raspberry Pi model</li>
+<li>Expansion Boards</li>
+<li>Temperature and environmental conditions</li>
+<li>Power quality</li>
+</ul>
+<h2 id="Custom-configurations">Custom configurations<a class="headerlink" href="#Custom-configurations" title="Permanent link">&para;</a></h2>
+<p>When you purchase a GateBerry, from the factory, this PLC comes with our custom image installed.</p>
+<div class="admonition info">
+<p class="admonition-title">Latest image version</p>
+<p>You can download the latest image for this product <a href="https://apps.industrialshields.com/main/rpi/images/GateBerry/2025-05-13-raspios-bookworm-arm64-lite-gateberry-v9-20251021104243.zip">here</a>.</p>
+</div>
+<details class="note">
+<summary>Image versions</summary>
+<p><a href="https://apps.industrialshields.com/main/rpi/images/GateBerry/">Here</a> you will find the different image versions we have available for customers.</p>
+</details>
+<p>The configurations in the latest published image are shown below:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Summarized</label><label for="__tabbed_4_2">Extended</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><table>
+    <tr><td><b>Hardware </b></td><td>Configure SPI, I2C, UART, UPS and RTC</td></tr>
+    <tr><td><b>System </b></td><td>Disables kernel messaging to serial, enables SSH</td></tr>
+    <tr><td><b>Network </b></td><td>Fixed IP <b><code>10.10.10.20</code></b> on <b><code>eth0</code></b></td></tr>
+    <tr><td><b>Logs </b></td><td>Enable compression and 50 MB limit</td></tr>
+    <tr><td><b>Udev </b></td><td>Create symlinks <b><code>/dev/rs485</code></b> and <b><code>/dev/exp_serial</code></b></td></tr>
+    <tr><td><b>Repositories </b></td><td>Add Industrial Shields font and its GPG key</td></tr>
+    <tr><td><b>Packages </b></td><td>Install RPI PLC libraries, utilities, Node-RED install (Nodered is not installed by default)</td></tr>
+    <tr><td><b>User </b></td><td>Copy base configuration and permissions, default user: <br> username: <b><code>pi</code></b> <br> password: <b><code>raspberry </code></b></td></tr>
+    <tr><td><b>Servicios </b></td><td>Activate <b><code>rpishutdown-boot-watchdog.service</code></b> and SSH</td></tr>
+</table></p>
+</div>
+<div class="tabbed-block">
+<h4 id="1-Modifications-to-bootconfigtxt">1. Modifications to /boot/config.txt<a class="headerlink" href="#1-Modifications-to-bootconfigtxt" title="Permanent link">&para;</a></h4>
+<p>Add the "GateBerry V9" configuration:</p>
+<ul>
+<li>
+<p><strong>Enable UPS:</strong></p>
+<ul>
+<li><code>dtoverlay=gpio-poweroff,gpiopin=23,active_low</code></li>
+<li><code>dtoverlay=gpio-shutdown,gpio_pin=24,gpio_pull=up</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Enable SPI with 2 chip selects:</strong></p>
+<ul>
+<li><code>dtparam=spi=on</code></li>
+<li><code>dtoverlay=spi0-2cs,cs0_pin=8,cs1_pin=7</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Enable I2C and RTC clock on the I2C bus:</strong></p>
+<ul>
+<li><code>dtparam=i2c_arm=on</code></li>
+<li><code>dtoverlay=i2c-rtc, pcf85363</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Optimize boot:</strong></p>
+<ul>
+<li><code>initial_turbo=60</code> (increases CPU frequency for the first 60 seconds)</li>
+</ul>
+</li>
+<li>
+<p><strong>Enable UART PL011:</strong></p>
+<ul>
+<li><code>dtoverlay=miniuart-bt</code></li>
+<li><code>enable_uart=1</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Specific configuration for RPi 4:</strong></p>
+<ul>
+<li><code>dtoverlay=uart3</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Specific configuration for RPi 5 (does not affect RPi 4):</strong></p>
+<ul>
+<li>Disable internal RTC and enable <code>uart2</code>.</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-Serial-console-setup">2. Serial console setup<a class="headerlink" href="#2-Serial-console-setup" title="Permanent link">&para;</a></h4>
+<p>Remove <code>console=serial0,115200</code> from <code>/boot/cmdline.txt</code></p>
+<p>Disable kernel messages through the RS-485 port (<strong>/dev/ttyAMA0</strong>).</p>
+<h4 id="3-UDEV-Rules-and-Symlink-Script">3. UDEV Rules and Symlink Script<a class="headerlink" href="#3-UDEV-Rules-and-Symlink-Script" title="Permanent link">&para;</a></h4>
+<p>Create <code>/etc/udev/rules.d/99-IndustrialShields.rules</code>:</p>
+<ul>
+<li><code>/dev/ttyAMA0</code> → symlink <code>/dev/rs485</code></li>
+<li>For RPi 4 → run <code>/usr/local/bin/create_exp_serial.sh</code> when <code>/dev/ttyAMA3</code> is detected</li>
+</ul>
+<p>Create <code>/usr/local/bin/create_exp_serial.sh</code>:</p>
+<ul>
+<li>Detect the model (RPi 4 or 5)</li>
+<li>On RPi 4 → create symlink <code>/dev/exp_serial → /dev/ttyAMA3</code></li>
+<li>On RPi 5 → create symlink <code>/dev/exp_serial → /dev/ttyAMA2</code></li>
+</ul>
+<h4 id="4-Kernel-Modules">4. Kernel Modules<a class="headerlink" href="#4-Kernel-Modules" title="Permanent link">&para;</a></h4>
+<p>Add <code>i2c-dev</code> to the file <code>/etc/modules</code></p>
+<p>Automatically loads the I²C module at boot time.</p>
+<h4 id="5-Logging-System-Configuration-journald">5. Logging System Configuration (journald)<a class="headerlink" href="#5-Logging-System-Configuration-journald" title="Permanent link">&para;</a></h4>
+<p>Modify <code>/etc/systemd/journald.conf</code>:</p>
+<ul>
+<li>Enable compression: <code>Compress=yes</code></li>
+<li>Limit the total journal size to <strong>50 MB</strong></li>
+</ul>
+<h4 id="6-Network-NetworkManager">6. Network (NetworkManager)<a class="headerlink" href="#6-Network-NetworkManager" title="Permanent link">&para;</a></h4>
+<p>Configure a static Ethernet connection:</p>
+<ul>
+<li>Interface: <code>eth0</code></li>
+<li>IP address: <code>10.10.10.20/24</code></li>
+<li>Save configuration to <code>/etc/NetworkManager/system-connections/eth0-1.nmconnection</code></li>
+</ul>
+<h4 id="7-Services">7. Services<a class="headerlink" href="#7-Services" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Enable SSH</strong> to start automatically.</li>
+<li><strong>Install and enable</strong> the <code>rpishutdown-boot-watchdog</code> service (downloaded from the Industrial Shields server):<ul>
+<li>Monitor the UPS status during boot time.</li>
+</ul>
+</li>
+</ul>
+<h4 id="8-APT-Repositories-and-GPG-Keys">8. APT Repositories and GPG Keys<a class="headerlink" href="#8-APT-Repositories-and-GPG-Keys" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Add the Industrial Shields repository to <code>/etc/apt/sources.list</code></li>
+<li>Download and install its public GPG key</li>
+<li>Run <code>apt update</code></li>
+</ul>
+<h4 id="9-Installing-Packages">9. Installing Packages<a class="headerlink" href="#9-Installing-Packages" title="Permanent link">&para;</a></h4>
+<p>Install:</p>
+<ul>
+<li>
+<p>Custom libraries:</p>
+<ul>
+<li><code>librpiplc=4.1.1</code></li>
+<li><code>python3-librpiplc=4.0.2</code></li>
+<li><code>rpishutdown-pre-poweroff=1.0.0</code></li>
+<li><code>librpiplc-tests-gateberry-v9</code></li>
+</ul>
+</li>
+<li>
+<p>Additional dependencies:</p>
+<ul>
+<li><code>python3-pip</code></li>
+<li><code>python3-serial</code></li>
+<li><code>python3-websockets</code></li>
+<li><code>python3-aiofiles</code></li>
+<li><code>ppp, ppp-dev, i2c-tools</code></li>
+</ul>
+</li>
+<li>
+<p>Extra Python:</p>
+<ul>
+<li>Install <code>aioserial</code> with <code>pip</code>.</li>
+</ul>
+</li>
+</ul>
+<h4 id="10-Node-RED">10. Node-RED<a class="headerlink" href="#10-Node-RED" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Download the official Node-RED installation script to <code>/etc/skel/.install-node-red.sh</code></li>
+<li>Create the script <code>/etc/skel/install-node-red.sh</code> to run the installer for version <strong>4.1.0</strong>.</li>
+<li>Both scripts will be copied to the new users created from <code>/etc/skel</code>.</li>
+</ul>
+<h4 id="11-User-pi">11. User pi<a class="headerlink" href="#11-User-pi" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Copy the entire contents of <code>/etc/skel</code> to <code>/home/pi</code></li>
+<li>Change the owner of <code>/home/pi</code> to <code>pi:pi</code></li>
+</ul>
+<h4 id="12-Cleanup-and-Sync">12. Cleanup and Sync<a class="headerlink" href="#12-Cleanup-and-Sync" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Run <code>apt clean</code></li>
+<li>Run <code>sync</code> to ensure changes are written to disk.</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- ### Proctections -->
+<!-- ## Led Indicators -->
+<!-- ## Documents & Certificates -->
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Home
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="gateberry-features-communications/" class="md-footer__link md-footer__link--next" aria-label="Next: Features &amp; Communications">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Features & Communications
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["toggle.color-mode", "content.code.copy", "content.admonition.icons", "content.tabs.icons", "navigation.instant", "navigation.top", "navigation.footer", "navigation.indexes", "search.highlight", "search.suggest", "search.share"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+        <script src="../custom/custom-js.js"></script>
+      
+    
+  </body>
+</html>

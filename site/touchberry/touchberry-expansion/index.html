@@ -1,0 +1,936 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for Industrial Shield PLCs and related hardware.">
+      
+      
+        <meta name="author" content="Industrial Shield">
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/industrial-shields/logo.webp">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>ESP32 PLC 14 - Expansion Boards - Industrial Shields Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../custom/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ESP32-PLC-14---Expansion-Boards" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Industrial Shields Documentation" class="md-header__button md-logo" aria-label="Industrial Shields Documentation" data-md-component="logo">
+      
+  <img src="../../assets/industrial-shields/logo.webp" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Industrial Shields Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ESP32 PLC 14 - Expansion Boards
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="green"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Industrial Shields Documentation" class="md-nav__button md-logo" aria-label="Industrial Shields Documentation" data-md-component="logo">
+      
+  <img src="../../assets/industrial-shields/logo.webp" alt="logo">
+
+    </a>
+    Industrial Shields Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Devices Family
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Devices Family
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../gateberry/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    GateBerry
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            GateBerry
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gateberry/gateberry-features-communications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Features & Communications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gateberry/gateberry-expansion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Expansion Boards
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#4G-LTE-M1--NB-IoT" class="md-nav__link">
+    <span class="md-ellipsis">
+      4G (LTE M1 / NB-IoT)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#CAN" class="md-nav__link">
+    <span class="md-ellipsis">
+      CAN
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#LoRa" class="md-nav__link">
+    <span class="md-ellipsis">
+      LoRa
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ESP32-PLC-14---Expansion-Boards">ESP32 PLC 14 - Expansion Boards<a class="headerlink" href="#ESP32-PLC-14---Expansion-Boards" title="Permanent link">&para;</a></h1>
+<p>The GateBerry PLC has 1 slot for additional comunication. Check the pinout in the <a href="/gateberry#__tabbed_1_2">block diagram</a>.</p>
+<h2 id="4G-LTE-M1--NB-IoT">4G (LTE M1 / NB-IoT)<a class="headerlink" href="#4G-LTE-M1--NB-IoT" title="Permanent link">&para;</a></h2>
+<p>4G LTE CAT M1/NB-IoT are cellular communication technologies designed for the Internet of Things (IoT). They provide low-power, wide-coverage, and cost-efficient connectivity, ideal for devices that transmit small amounts of data such as sensors, smart meters, and trackers.</p>
+<h3 id="Module">Module<a class="headerlink" href="#Module" title="Permanent link">&para;</a></h3>
+<p>The module used to provide LTE M1 and NB IoT communication is the Ublox SARA range, specifically the modules:</p>
+<ul>
+<li>SARA-R412M</li>
+<li>SARA-R422M8S</li>
+</ul>
+<p>Here are some of their manuals:</p>
+<ul>
+<li><a href="https://download.mikroe.com/documents/datasheets/SARA-R422M8S_datasheet.pdf">Datasheet</a></li>
+<li><a href="https://content.u-blox.com/sites/default/files/SARA-R5-R4-GNSS-Implementation_AppNote_UBX-20012413.pdf?utm_content=UBX-20012413">Application note</a></li>
+<li><a href="https://cdn.sparkfun.com/assets/5/8/9/e/7/SARA-R4___SARA-N4_AT_Commands_Manual.pdf">AT Commands Manual</a></li>
+</ul>
+<h3 id="Hardware-Setup">Hardware Setup<a class="headerlink" href="#Hardware-Setup" title="Permanent link">&para;</a></h3>
+<p>When purchasing a GateBerry equipped with the cellular communication expansion module, an additional output is provided for external antennas through female SMA coaxial connectors, which are directly linked to the communication module.</p>
+<p>The hardware assembly should appear as shown in the following image:</p>
+<figure style="padding: 50px">
+  <img alt="" src="../../assets/altres/pending.jpg" width="70%" />
+    <!-- <figcaption>Image caption</figcaption> -->
+</figure>
+<p>The device includes a SIM card slot, located as shown in the image below:</p>
+<figure style="padding: 50px">
+  <img alt="" src="../../assets/altres/pending.jpg" width="70%" />
+    <!-- <figcaption>Image caption</figcaption> -->
+</figure>
+<details class="recomendation">
+<summary>SIM recomendation</summary>
+<p>The module only supports <strong>Micro SIM</strong> cards.
+If you have a <strong>Nano SIM</strong>, please use a <strong>Micro SIM adapter</strong> to ensure proper fit and to prevent connector damage.</p>
+<p><figure markdown="span" style="padding: 50px">
+<img alt="" src="../../assets/altres/sim_mides.webp" width="70%" />
+    <!-- <figcaption>Image caption</figcaption> -->
+</figure></p>
+<p>It is recommended to use <strong>precision tweezers</strong> when inserting or removing the SIM card to protect both the connector and the card.</p>
+</details>
+<h3 id="Software-Setup">Software Setup<a class="headerlink" href="#Software-Setup" title="Permanent link">&para;</a></h3>
+<p>This setup allows us to configure the connection with the module. It only needs to be done once.</p>
+<ol>
+<li>
+<p>Check if <code>dtoverlay=uart3</code> or <code>dtoverlay=uart2</code> (Depending on the Raspberry PI version) in <code>/boot/firmware/config.txt</code></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>nano<span class="w"> </span>/boot/firmware/config.txt
+</span></code></pre></div>
+<p>Look for these configuration lines (<strong>RPIv4</strong>)
+  <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">dtoverlay</span><span class="o">=</span>uart3
+</span></code></pre></div></p>
+<p>Look for these configuration lines (<strong>RPIv5</strong>)
+  <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">dtoverlay</span><span class="o">=</span>uart2
+</span></code></pre></div></p>
+<p>If it does not exist, it should be added, and then reboot the device to make the changes effective.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sudo<span class="w"> </span>reboot<span class="w"> </span>now
+</span></code></pre></div>
+</li>
+<li>
+<p>Copy or Download the setup</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If your SIM needs to be unlocked using a PIN number, this script will <strong>not</strong> work for it.</p>
+</div>
+<p>Check it here: <a href="https://apps.industrialshields.com/main/rpi/gateberry/setup-sara.sh">setup-sara.sh</a></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>nano<span class="w"> </span>setup-sara.sh
+</span></code></pre></div>
+<p>or, if you have an internet connection, download this file as follows</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>wget<span class="w"> </span>https://apps.industrialshields.com/main/rpi/gateberry/setup-sara.sh
+</span></code></pre></div>
+<p>To make the script executable, run the following command:
+  <div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>chmod<span class="w"> </span>+x<span class="w"> </span>setup-sara.sh
+</span></code></pre></div></p>
+<p>Next, execute the script with administrative privileges:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>sudo<span class="w"> </span>./setup-sara.sh
+</span></code></pre></div>
+<p>During execution, the script will prompt you to enter your connection credentials, as shown below.</p>
+<p><img alt="" src="../../assets/screenshots/example_form_setup_sara.png" /></p>
+<p>Once the process is complete, two system services will be created:</p>
+<ul>
+<li><strong>pppd.service</strong>: responsible for creating the ppp0 interface to simplify the connection process.</li>
+<li><strong>check-ppp0.service</strong>: ensures that the interface and connection are functioning correctly.</li>
+</ul>
+</li>
+</ol>
+<h4 id="Working-Test--Troubleshooting">Working Test &amp; Troubleshooting<a class="headerlink" href="#Working-Test--Troubleshooting" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<p><strong>Check service status</strong></p>
+<p>Run the following commands to verify that the services are active:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>check-ppp0.service
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>pppd.service
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Stop the services</strong></p>
+<p>Before executing the communication test script, stop the services to prevent communication conflicts with the module:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"> </span>check-ppp0.service
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"> </span>pppd.service
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Run the test script</strong></p>
+<p>To test communication with the module, execute the configuration script in NB mode.
+This step is only intended to confirm that communication is working correctly.
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>/usr/bin/python3<span class="w"> </span>/usr/local/bin/network-setup.py<span class="w"> </span>nb-iot
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Verify network interface</strong></p>
+<p>If the script completes successfully, list the network interfaces with:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>ip<span class="w"> </span>a
+</span></code></pre></div>
+You should see the ppp0 interface.
+To verify network access, run:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>ping<span class="w"> </span>-I<span class="w"> </span>ppp0<span class="w"> </span><span class="m">8</span>.8.8.8
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Restart the services</strong></p>
+<p>After completing the test, restart the services using:</p>
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>check-ppp0.service
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>pppd.service
+</span></code></pre></div>
+6. <strong>Restore system state</strong></p>
+<p>Finally, reboot the system to return to its normal operating state:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>sudo<span class="w"> </span>reboot
+</span></code></pre></div></p>
+</li>
+</ol>
+<!-- 
+### Related blogs
+
+[SARA-R412M on Raspberry Pi](https://www.industrialshields.com/es_ES/blog/raspberry-pi-para-la-industria-26/sara-r412m-en-raspberry-pi-613)
+
+[Comparison between SARA-R412M and SARA-R422M8S](https://www.industrialshields.com/es_ES/blog/blog-industrial-open-source-1/comparison-between-sara-r412m-and-sara-r422m8s-591)
+ -->
+
+<hr />
+<h2 id="CAN">CAN<a class="headerlink" href="#CAN" title="Permanent link">&para;</a></h2>
+<p>CAN (Controller Area Network) is a robust communication protocol designed for real-time data exchange between electronic control units (ECUs) in vehicles and industrial systems. It enables reliable, high-speed, and error-resistant communication without requiring a central computer, making it ideal for automotive, industrial, and automation applications.</p>
+<h3 id="Module_1">Module<a class="headerlink" href="#Module_1" title="Permanent link">&para;</a></h3>
+<p>The selected module for enabling GateBerry PLC to communicate via the CAN protocol is the <strong>MCP2515</strong>, connected to the PLC through SPI. It allows configuring a 120 Ω termination resistor (selectable at the time of PLC purchase).</p>
+<h3 id="Important-features-and-values-to-consider">Important features and values ​​to consider<a class="headerlink" href="#Important-features-and-values-to-consider" title="Permanent link">&para;</a></h3>
+<table>
+      <tr><td><b>Interface type</b></td><td>CAN Bus</td></tr>
+      <tr><td><b>Communication speed (baud rate)</b></td><td><a href="#1-Serial-Port-Configuration">Configurable</a></td></tr>
+      <!-- <tr><td><b>Protocolos compatibles</b></td><td>Modbus RTU</td></tr> -->
+      <!-- <tr><td><b>Voltage and signal levels:</b></td><td>aaaa</td></tr> -->
+      <tr><td><b>Connectors and wiring</b></td><td>M3 addaptor connector (<b>H</b> (CAN High) and <b>L</b> (CAN Low))</td></tr>
+      <tr><td><b>Termination resistor</b></td><td>120 ohms (selectable at the time of PLC purchase)</td></tr>
+</table>
+
+<h3 id="Hardware-setup">Hardware setup<a class="headerlink" href="#Hardware-setup" title="Permanent link">&para;</a></h3>
+<h4 id="CAN-Bus-Connection">CAN Bus Connection<a class="headerlink" href="#CAN-Bus-Connection" title="Permanent link">&para;</a></h4>
+<p>The PLC can be connected to the CAN bus as shown in the image below:</p>
+<figure style="padding: 50px">
+  <img alt="" src="../../assets/altres/pending.jpg" width="70%" />
+    <!-- <figcaption>Image caption</figcaption> -->
+</figure>
+<div class="admonition warning">
+<p class="admonition-title">Termination resistor configuration</p>
+<p>When purchasing the PLC you must select whether you will use the PLC at <strong>one end of the line</strong> or <strong>in the middle of the bus</strong>.</p>
+<ul>
+<li>If you use it at one end, select the default option, where this resistor is built in.</li>
+<li>Otherwise, select the option that eliminates this termination resistor.</li>
+</ul>
+</div>
+<h3 id="Software-setup">Software setup<a class="headerlink" href="#Software-setup" title="Permanent link">&para;</a></h3>
+<p>To configure the CAN module and establish communication with the PLC, follow these steps:</p>
+<p>Edit the firmware configuration file <code>/boot/firmware/config.txt</code>:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>sudo<span class="w"> </span>nano<span class="w"> </span>/boot/firmware/config.txt
+</span></code></pre></div></p>
+<p>Add the following overlay:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nv">dtoverlay</span><span class="o">=</span>mcp2515,spi0-0,oscillator<span class="o">=</span><span class="m">10000000</span>,interrupt<span class="o">=</span><span class="m">21</span>,speed<span class="o">=</span><span class="m">125000</span>
+</span></code></pre></div>
+Parameters explanation:</p>
+<ul>
+<li>spi0-0: MCP2515 connected to SPI bus with CS on pin 8.</li>
+<li>oscillator=10000000: 10 MHz oscillator.</li>
+<li>interrupt=21: interrupt pin.</li>
+<li>speed=125000: default baudrate 125 kbps.</li>
+</ul>
+<p>Save and exit with Ctrl + S and Ctrl + X.</p>
+<p>Reboot the PLC to apply changes:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>sudo<span class="w"> </span>reboot
+</span></code></pre></div>
+<p>Verify correct module initialization, with the command:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>dmesg<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>mcp
+</span></code></pre></div>
+You can also check with:<code>ifconfig can0</code> or <code>ip a</code></p>
+<p>If CAN doesn't appear as UP, use this command to change its status:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>sudo<span class="w"> </span>ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>can0<span class="w"> </span>up<span class="w"> </span><span class="nb">type</span><span class="w"> </span>can<span class="w"> </span>bitrate<span class="w"> </span><span class="m">125000</span>
+</span></code></pre></div></p>
+<h4 id="Working-Test--Troubleshooting_1">Working Test &amp; Troubleshooting<a class="headerlink" href="#Working-Test--Troubleshooting_1" title="Permanent link">&para;</a></h4>
+<p>To ensure the module works correctly, use the tools provided by the <code>can-utils</code> library.
+<strong>Install can-utils</strong>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>can-utils
+</span></code></pre></div></p>
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>candump<span class="w"> </span>can0
+</span></code></pre></div>
+If the bus is configured correctly, this command will display data transmitted over the CAN bus.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>cansend<span class="w"> </span>can0<span class="w"> </span><span class="m">111</span><span class="c1">#FF</span>
+</span></code></pre></div>
+<ul>
+<li>111: CAN message identifier.</li>
+<li>FF: data sent in hexadecimal.</li>
+</ul>
+<p>This command allows testing communication by sending test messages on the CAN network and verifying reception on other connected nodes.</p>
+<!-- 
+### Related blogs
+
+[Setting Up CANopen Master on a Raspberry Pi PLC with CODESYS](https://www.industrialshields.com//blog/raspberry-pi-for-industry-26/setting-up-canopen-master-on-a-raspberry-pi-plc-with-codesys-658)
+
+[How to communicate a Raspberry PLC with CANBus](https://www.industrialshields.com//blog/raspberry-pi-for-industry-26/how-to-communicate-a-raspberry-plc-with-canbus-465)
+
+[How to test CANBUS with Raspberry PLC v3](https://www.industrialshields.com//blog/raspberry-pi-for-industry-26/how-to-test-canbus-with-raspberry-plc-v3-343)
+
+ -->
+
+<hr />
+<h2 id="LoRa">LoRa<a class="headerlink" href="#LoRa" title="Permanent link">&para;</a></h2>
+<p>LoRa is a low-power, long-range wireless communication technology designed for the Internet of Things (IoT). It enables long-distance data transmission with minimal energy consumption, making it ideal for battery-powered devices such as sensors, trackers, and smart city applications. It operates on unlicensed radio frequencies, reducing deployment costs and increasing flexibility.</p>
+<h3 id="Modules">Modules<a class="headerlink" href="#Modules" title="Permanent link">&para;</a></h3>
+<p>The selected modules to enable LoRa communication on GateBerry are:</p>
+<ul>
+<li><strong>Europe &amp; Asia</strong>: RN2483A</li>
+<li><strong>America</strong>: RN2903A</li>
+</ul>
+<h3 id="Hardware-Setup_1">Hardware Setup<a class="headerlink" href="#Hardware-Setup_1" title="Permanent link">&para;</a></h3>
+<p>When purchasing a GateBerry equipped with the LoRa communication expansion module, an additional output is provided for external antennas through female SMA coaxial connectors, which are directly linked to the communication module.</p>
+<p>The hardware assembly should appear as shown in the following image:</p>
+<figure style="padding: 50px">
+  <img alt="" src="../../assets/altres/pending.jpg" width="70%" />
+    <!-- <figcaption>Image caption</figcaption> -->
+</figure>
+<h3 id="Software-setup_1">Software setup<a class="headerlink" href="#Software-setup_1" title="Permanent link">&para;</a></h3>
+<p>Both modules communicate via serial interface. On GateBerry, the assigned serial port is: <code>/dev/exp_serial</code></p>
+<p>First we have to set the serial port baudrate to 57600:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>stty<span class="w"> </span><span class="m">57600</span><span class="w"> </span>-F<span class="w"> </span>/dev/exp_serial<span class="w"> </span>raw<span class="w"> </span>-echo
+</span></code></pre></div>
+Then reset the module via the GateBerry digital output:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>sudo<span class="w"> </span>~/test/GATEBERRY_V9/GATEBERRY/set-digital-output<span class="w"> </span>EXP_RST<span class="w"> </span><span class="m">1</span>
+</span></code></pre></div>
+Thats it!</p>
+<h4 id="Working-Test--Troubleshooting_2">Working Test &amp; Troubleshooting<a class="headerlink" href="#Working-Test--Troubleshooting_2" title="Permanent link">&para;</a></h4>
+<p>Here we share the command manual to fully configure your LoRa module.</p>
+<ul>
+<li>
+<p><a href="https://ww1.microchip.com/downloads/en/DeviceDoc/RN2483-LoRa-Technology-Module-Command-Reference-User-Guide-DS40001784G.pdf">RN2483 LoRa® Technology Module Command Reference User’s Guide</a></p>
+</li>
+<li>
+<p><a href="https://ww1.microchip.com/downloads/en/DeviceDoc/40001811A.pdf">RN2903 LoRa™ Technology Module Command Reference User’s Guide</a></p>
+</li>
+</ul>
+<p>These are the basic commands we can use to check that there is communication with the LoRa module.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:6"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><input id="__tabbed_1_6" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Monitor the LoRa module output</label><label for="__tabbed_1_2">Check module version and model</label><label for="__tabbed_1_3">Set transmission frequency</label><label for="__tabbed_1_4">Pause MAC layer</label><label for="__tabbed_1_5">Send data</label><label for="__tabbed_1_6">Receive data</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>In this way we will see what the LoRa module responds to us, while we send comands using another terminal.
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>cat<span class="w"> </span>/dev/exp_serial
+</span></code></pre></div></p>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;sys get ver\r&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/exp_serial
+</span></code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>After resetting the module with: <code>sudo ~/test/GATEBERRY_V9/GATEBERRY/set-digital-output EXP_RST 1</code>, while monitoring the serial port, the module will automatically send version and model information.</p>
+</div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Expected responses (LoRa EU/ASIA)</label><label for="__tabbed_2_2">Expected responses (LoRa America)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Similar to: </p>
+<blockquote>
+<p>RN2483 1.0.5 Oct 31 2018 15:06:52</p>
+</blockquote>
+</div>
+<div class="tabbed-block">
+<p>Similar to: </p>
+<blockquote>
+<p>RN2903 1.0.5 Nov 06 2018 10:45:27</p>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>Asia:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;radio set freq 433000000\r&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/exp_serial
+</span></code></pre></div></li>
+<li>Europe:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;radio set freq 868000000\r&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/exp_serial
+</span></code></pre></div></li>
+<li>America:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;radio set freq 868000000\r&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/exp_serial
+</span></code></pre></div></li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Expected responses (LoRa EU/ASIA/America)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<blockquote>
+<p>ok</p>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Frequency must be set according to the operating region.</p>
+</div>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;mac pause\r&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/exp_serial
+</span></code></pre></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Expected responses (LoRa EU/ASIA/America):</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Value like: </p>
+<blockquote>
+<p>4294967245</p>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;radio tx AA\r&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/exp_serial
+</span></code></pre></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Expected responses (LoRa EU/ASIA/America)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="codehilite"><pre><span></span><code><span class="k">&gt; </span><span class="ge">ok</span>
+&gt; 
+<span class="k">&gt; </span><span class="ge">radio_tx_ok</span>
+</code></pre></div>
+
+</div>
+</div>
+</div>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;radio rx 0\r&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/exp_serial<span class="w"> </span>
+</span></code></pre></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:1"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Expected responses (LoRa EU/ASIA/America)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<blockquote>
+<p>ok</p>
+<p>radio_rx [Byte value recived in hexadecimal]</p>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>If more than 15 seconds pass without receiving a response, this message will appear.
+<code>radio_err</code></p>
+</div>
+</div>
+</div>
+</div>
+<p>In some cases the module can return this mesage:
+<code>invalid_param</code></p>
+<p>Make sure the baud rate is correct and that you end the commands with a: <strong><code>\r</code></strong></p>
+<!-- 
+### Related blogs
+[How to set up the UPS of a Raspberry based PLC](https://www.industrialshields.com//blog/raspberry-pi-for-industry-26/ups-shield-with-rpi-plc-645)
+
+[Advanced Communication Setup: Two Raspberry Pi PLCs with LoRa Modules and a LoRaWAN Gateway](https://www.industrialshields.com//blog/raspberry-pi-for-industry-26/advanced-communication-setup-two-raspberry-pi-plcs-with-lora-modules-and-a-lorawan-gateway-650)
+
+[LoRaWAN on Raspberry Pi](https://www.industrialshields.com//blog/raspberry-pi-for-industry-26/lorawan-on-raspberry-pi-644)
+
+[LoRa module on Raspberry PI](https://www.industrialshields.com//blog/raspberry-pi-for-industry-26/lora-module-on-raspberry-pi-615)
+
+[How to use LoRa with Raspberry PLC](https://www.industrialshields.com//blog/raspberry-pi-for-industry-26/lora-with-raspberry-plc-606)
+
+[Lora communication between two Raspberry Pi PLCs](https://www.industrialshields.com//blog/raspberry-pi-for-industry-26/lora-communication-between-two-raspberry-pi-plcs-596)
+
+[What is LoRa?](https://www.industrialshields.com//blog/arduino-industrial-1/what-is-lora-254)
+
+[What is LoRaWAN?](https://www.industrialshields.com//blog/arduino-industrial-1/what-is-lorawan-253) 
+
+-->
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["toggle.color-mode", "content.code.copy", "content.admonition.icons", "content.tabs.icons", "navigation.instant", "navigation.top", "navigation.footer", "navigation.indexes", "search.highlight", "search.suggest", "search.share"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+        <script src="../../custom/custom-js.js"></script>
+      
+    
+  </body>
+</html>
