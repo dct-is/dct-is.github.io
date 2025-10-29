@@ -605,12 +605,19 @@ If you have a <strong>Nano SIM</strong>, please use a <strong>Micro SIM adapter<
 <p>Check if <code>dtoverlay=uart3</code> or <code>dtoverlay=uart2</code> (Depending on the Raspberry PI version) in <code>/boot/firmware/config.txt</code></p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>nano<span class="w"> </span>/boot/firmware/config.txt
 </span></code></pre></div>
-<p>Look for these configuration lines (<strong>RPIv4</strong>)
-  <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">dtoverlay</span><span class="o">=</span>uart3
-</span></code></pre></div></p>
-<p>Look for these configuration lines (<strong>RPIv5</strong>)
-  <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">dtoverlay</span><span class="o">=</span>uart2
-</span></code></pre></div></p>
+<p>Look for these configuration lines:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">RPIv4</label><label for="__tabbed_1_2">RPIv5</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">dtoverlay</span><span class="o">=</span>uart3
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">dtoverlay</span><span class="o">=</span>uart2
+</span></code></pre></div>
+</div>
+</div>
+</div>
 <p>If it does not exist, it should be added, and then reboot the device to make the changes effective.</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sudo<span class="w"> </span>reboot<span class="w"> </span>now
 </span></code></pre></div>
@@ -699,11 +706,11 @@ To verify network access, run:
 <h2 id="CAN">CAN<a class="headerlink" href="#CAN" title="Permanent link">&para;</a></h2>
 <p>CAN (Controller Area Network) is a robust communication protocol designed for real-time data exchange between electronic control units (ECUs) in vehicles and industrial systems. It enables reliable, high-speed, and error-resistant communication without requiring a central computer, making it ideal for automotive, industrial, and automation applications.</p>
 <h3 id="Module_1">Module<a class="headerlink" href="#Module_1" title="Permanent link">&para;</a></h3>
-<p>The selected module for enabling GateBerry PLC to communicate via the CAN protocol is the <strong>MCP2515</strong>, connected to the PLC through SPI. It allows configuring a 120 Ω termination resistor (selectable at the time of PLC purchase).</p>
+<p>The selected module for enabling GateBerry PLC to communicate via the CAN protocol is the MCP2515, connected to the PLC through SPI. It allows configuring a 120 Ω termination resistor (selectable at the time of PLC purchase).</p>
 <h3 id="Important-features-and-values-to-consider">Important features and values ​​to consider<a class="headerlink" href="#Important-features-and-values-to-consider" title="Permanent link">&para;</a></h3>
 <table>
       <tr><td><b>Interface type</b></td><td>CAN Bus</td></tr>
-      <tr><td><b>Communication speed (baud rate)</b></td><td><a href="#1-Serial-Port-Configuration">Configurable</a></td></tr>
+      <tr><td><b>Communication speed (baud rate)</b></td><td><a href="#Software-setup">Configurable</a></td></tr>
       <!-- <tr><td><b>Protocolos compatibles</b></td><td>Modbus RTU</td></tr> -->
       <!-- <tr><td><b>Voltage and signal levels:</b></td><td>aaaa</td></tr> -->
       <tr><td><b>Connectors and wiring</b></td><td>M3 adapter connector (<b>H</b> (CAN High) and <b>L</b> (CAN Low))</td></tr>
@@ -740,7 +747,7 @@ Parameters explanation:</p>
 <li><strong>interrupt</strong>=21: interrupt pin.</li>
 <li><strong>speed</strong>=125000: default baud rate 125 kbps.</li>
 </ul>
-<p>Save and exit with Ctrl + S and Ctrl + X.</p>
+<p>Save and exit with <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-s">S</kbd></span> and <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-x">X</kbd></span>.</p>
 <p>Reboot the PLC to apply changes:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>sudo<span class="w"> </span>reboot
 </span></code></pre></div>
@@ -813,7 +820,7 @@ Thats it!</p>
 </li>
 </ul>
 <p>These are the basic commands we can use to check that there is communication with the LoRa module.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:6"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><input id="__tabbed_1_6" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Monitor the LoRa module output</label><label for="__tabbed_1_2">Check module version and model</label><label for="__tabbed_1_3">Set transmission frequency</label><label for="__tabbed_1_4">Pause MAC layer</label><label for="__tabbed_1_5">Send data</label><label for="__tabbed_1_6">Receive data</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:6"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><input id="__tabbed_2_5" name="__tabbed_2" type="radio" /><input id="__tabbed_2_6" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Monitor the LoRa module output</label><label for="__tabbed_2_2">Check module version and model</label><label for="__tabbed_2_3">Set transmission frequency</label><label for="__tabbed_2_4">Pause MAC layer</label><label for="__tabbed_2_5">Send data</label><label for="__tabbed_2_6">Receive data</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>In this way we will see what the LoRa module responds to us, while we send commands using another terminal.
@@ -827,7 +834,7 @@ Thats it!</p>
 <p class="admonition-title">Info</p>
 <p>After resetting the module with: <code>sudo ~/test/GATEBERRY_V9/GATEBERRY/set-digital-output EXP_RST 1</code>, while monitoring the serial port, the module will automatically send version and model information.</p>
 </div>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Expected responses (LoRa EU/ASIA)</label><label for="__tabbed_2_2">Expected responses (LoRa America)</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Expected responses (LoRa EU/ASIA)</label><label for="__tabbed_3_2">Expected responses (LoRa America)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Similar to: </p>
@@ -861,7 +868,7 @@ Each region of the world has different allocations, so using an unauthorized fre
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;radio set freq 868000000\r&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/exp_serial
 </span></code></pre></div></li>
 </ul>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Expected responses (LoRa EU/ASIA/America)</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Expected responses (LoRa EU/ASIA/America)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <blockquote>
@@ -874,7 +881,7 @@ Each region of the world has different allocations, so using an unauthorized fre
 <div class="tabbed-block">
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;mac pause\r&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/exp_serial
 </span></code></pre></div>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Expected responses (LoRa EU/ASIA/America):</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Expected responses (LoRa EU/ASIA/America):</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Value like: </p>
@@ -888,7 +895,7 @@ Each region of the world has different allocations, so using an unauthorized fre
 <div class="tabbed-block">
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;radio tx AA\r&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/exp_serial
 </span></code></pre></div>
-<div class="tabbed-set tabbed-alternate" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Expected responses (LoRa EU/ASIA/America)</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:1"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Expected responses (LoRa EU/ASIA/America)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="codehilite"><pre><span></span><code><span class="k">&gt; </span><span class="ge">ok</span>
@@ -903,7 +910,7 @@ Each region of the world has different allocations, so using an unauthorized fre
 <div class="tabbed-block">
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;radio rx 0\r&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/exp_serial<span class="w"> </span>
 </span></code></pre></div>
-<div class="tabbed-set tabbed-alternate" data-tabs="6:1"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Expected responses (LoRa EU/ASIA/America)</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:1"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Expected responses (LoRa EU/ASIA/America)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <blockquote>
