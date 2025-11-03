@@ -542,7 +542,7 @@ GateBerry is a compact PLC built on the Raspberry Pi platform, combining the fle
 <details class="info">
 <summary>What is included on purchase (default product)</summary>
 <ul>
-<li>1x GateBerry (2,4 or 8 GB RAM, selectable at the moment of purchase)</li>
+<li>1x GateBerry (2GB | 4GB | 8GB RAM, selectable at the moment of purchase)</li>
 <li>1x Screw connector (2 pin)</li>
 <li>1x Push-in connector (6 pin)</li>
 <li>1x MicroSD 20GB (Industrial Grade)(Include: Debian Bookworm 64 bit (With custom configurations))</li>
@@ -578,7 +578,7 @@ GateBerry is a compact PLC built on the Raspberry Pi platform, combining the fle
   <tr><td><b>USB </b></td><td>x2 USB-A 2.0, x2 USB-A 3.0</td></tr>
   <tr><td><b>Ethernet </b></td><td>x1 Gbit Ethernet, RJ45 connector</td></tr>
   <tr><td><b><a href="/gateberry/gateberry-features-communications/#RS485">RS485 </a></b></td><td>x1 RS485 interface (half-duplex) with software switchable 120Ω termination resistor</td></tr>
-  <tr><td><b><a href="/gateberry/gateberry-features-communications/#I²C">I²C </a></b></td><td>5V I²C bus, direct from Raspberry PI board. Address 0x51 is in use</td></tr>
+  <tr><td><b><a href="/gateberry/gateberry-features-communications/#I²C">I²C </a></b></td><td>5V I²C bus, direct from Raspberry PI board. Address 0x51 is in use by RTC</td></tr>
 </table>
 
 <h2 id="Block-diagram">Block diagram<a class="headerlink" href="#Block-diagram" title="Permanent link">&para;</a></h2>
@@ -671,7 +671,9 @@ GateBerry is a compact PLC built on the Raspberry Pi platform, combining the fle
 </div>
 </div>
 <h2 id="Power-supply">Power supply<a class="headerlink" href="#Power-supply" title="Permanent link">&para;</a></h2>
-<p>The GateBerry PLC is designed to be powered at 24 Vdc, however the power supply range is 12 to 24 Vdc.</p>
+<!-- The GateBerry PLC is designed to be powered at 24 Vdc, however the power supply range is 12 to 24 Vdc. -->
+<!-- The GateBerry PLC has a nominal voltage of 24 Vdc, however, the range in which it can work correctly is from 12 to 24 Vdc. -->
+<p>The GateBerry PLC is designed for a nominal supply voltage of 24 Vdc, with an allowable operating range from 12 to 24 Vdc.</p>
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
 <p>Exceeding these limits may cause the equipment to malfunction, or even end up being damaged.</p>
@@ -748,16 +750,16 @@ GateBerry is a compact PLC built on the Raspberry Pi platform, combining the fle
 <p class="admonition-title">Latest image version</p>
 <p>You can download the latest image for this product <a href="https://apps.industrialshields.com/main/rpi/images/GateBerry/2025-05-13-raspios-bookworm-arm64-lite-gateberry-v9-20251021104243.zip">here</a>.</p>
 </div>
-<details class="note">
-<summary>Image versions</summary>
+<div class="admonition note">
+<p class="admonition-title">Image versions</p>
 <p><a href="https://apps.industrialshields.com/main/rpi/images/GateBerry/">Here</a> you will find the different image versions we have available for customers.</p>
-</details>
+</div>
 <p>The configurations in the latest published image are shown below:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Summarized</label><label for="__tabbed_4_2">Extended</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p><table>
-    <tr><td><b>Hardware </b></td><td>Configure SPI, I2C, UART, UPS and RTC</td></tr>
+    <tr><td><b>Hardware </b></td><td>Configure SPI, I²C, UART, UPS and RTC</td></tr>
     <tr><td><b>System </b></td><td>Disables kernel messaging to serial, enables SSH</td></tr>
     <tr><td><b>Network </b></td><td>Fixed IP <b><code>10.10.10.20</code></b> on <b><code>eth0</code></b></td></tr>
     <tr><td><b>Logs </b></td><td>Enable compression and 50 MB limit</td></tr>
@@ -787,7 +789,7 @@ GateBerry is a compact PLC built on the Raspberry Pi platform, combining the fle
 </ul>
 </li>
 <li>
-<p><strong>Enable I2C and RTC clock on the I2C bus:</strong></p>
+<p><strong>Enable I²C and RTC clock on the I²C bus:</strong></p>
 <ul>
 <li><code>dtparam=i2c_arm=on</code></li>
 <li><code>dtoverlay=i2c-rtc, pcf85363</code></li>
@@ -911,6 +913,11 @@ GateBerry is a compact PLC built on the Raspberry Pi platform, combining the fle
 </ul>
 </div>
 </div>
+</div>
+<div class="admonition success">
+<p class="admonition-title">Recommendation</p>
+<p>For security reasons, it is strongly recommended to change both the <strong>default IP</strong> address and the <strong>default login credentials</strong> provided with the device. <br />
+This measure helps prevent unauthorized access and ensures compliance with cybersecurity best practices.</p>
 </div>
 <!-- ### Proctections -->
 <!-- ## Led Indicators -->

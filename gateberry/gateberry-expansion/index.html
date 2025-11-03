@@ -580,12 +580,12 @@
 <p>When purchasing a GateBerry equipped with the cellular communication expansion module, an additional output is provided for external antennas through female SMA coaxial connectors, which are directly linked to the communication module.</p>
 <p>The hardware assembly should appear as shown in the following image:</p>
 <figure style="padding: 50px">
-  <img alt="" src="../../assets/altres/pending.jpg" width="70%" />
+  <img alt="" src="../../assets/plc-images/gateberry-antenna.webp" width="50%" />
     <!-- <figcaption>Image caption</figcaption> -->
 </figure>
 <p>The device includes a SIM card slot, located as shown in the image below:</p>
 <figure style="padding: 50px">
-  <img alt="" src="../../assets/altres/pending.jpg" width="70%" />
+  <img alt="" src="../../assets/plc-images/gateberry-sim-slot.webp" width="50%" />
     <!-- <figcaption>Image caption</figcaption> -->
 </figure>
 <details class="note">
@@ -721,7 +721,7 @@ To verify network access, run:
 <h4 id="CAN-Bus-Connection">CAN Bus Connection<a class="headerlink" href="#CAN-Bus-Connection" title="Permanent link">&para;</a></h4>
 <p>The PLC can be connected to the CAN bus as shown in the image below:</p>
 <figure style="padding: 50px">
-  <img alt="" src="../../assets/altres/pending.jpg" width="70%" />
+  <img alt="" src="../../assets/pinout-diagrams/gateberry_ps-gateberry-canbus.svg" width="80%" />
     <!-- <figcaption>Image caption</figcaption> -->
 </figure>
 <details class="warning">
@@ -797,7 +797,7 @@ If the bus is configured correctly, this command will display data transmitted o
 <p>When purchasing a GateBerry equipped with the LoRa communication expansion module, an additional output is provided for external antennas through female SMA coaxial connectors, which are directly linked to the communication module.</p>
 <p>The hardware assembly should appear as shown in the following image:</p>
 <figure style="padding: 50px">
-  <img alt="" src="../../assets/altres/pending.jpg" width="70%" />
+  <img alt="" src="../../assets/plc-images/gateberry-antenna.webp" width="50%" />
     <!-- <figcaption>Image caption</figcaption> -->
 </figure>
 <h3 id="Software-setup_1">Software setup<a class="headerlink" href="#Software-setup_1" title="Permanent link">&para;</a></h3>
@@ -807,8 +807,7 @@ If the bus is configured correctly, this command will display data transmitted o
 </span></code></pre></div>
 Then reset the module via the GateBerry digital output:
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>sudo<span class="w"> </span>~/test/GATEBERRY_V9/GATEBERRY/set-digital-output<span class="w"> </span>EXP_RST<span class="w"> </span><span class="m">1</span>
-</span></code></pre></div>
-Thats it!</p>
+</span></code></pre></div></p>
 <h4 id="Working-Test--Troubleshooting_2">Working Test &amp; Troubleshooting<a class="headerlink" href="#Working-Test--Troubleshooting_2" title="Permanent link">&para;</a></h4>
 <p>Here we share the command manual to fully configure your LoRa module.</p>
 <ul>
@@ -838,15 +837,13 @@ Thats it!</p>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Similar to: </p>
-<blockquote>
-<p>RN2483 1.0.5 Oct 31 2018 15:06:52</p>
-</blockquote>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>RN2483 1.0.5 Oct 31 2018 15:06:52
+</span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<p>Similar to: </p>
-<blockquote>
-<p>RN2903 1.0.5 Nov 06 2018 10:45:27</p>
-</blockquote>
+<p>Similar to:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>RN2903 1.0.5 Nov 06 2018 10:45:27
+</span></code></pre></div>
 </div>
 </div>
 </div>
@@ -859,64 +856,61 @@ Each region of the world has different allocations, so using an unauthorized fre
 </div>
 <ul>
 <li>Asia:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;radio set freq 433000000\r&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/exp_serial
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;radio set freq 433000000\r&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/exp_serial
 </span></code></pre></div></li>
 <li>Europe:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;radio set freq 868000000\r&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/exp_serial
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;radio set freq 868000000\r&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/exp_serial
 </span></code></pre></div></li>
 <li>America:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;radio set freq 868000000\r&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/exp_serial
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;radio set freq 915000000\r&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/exp_serial
 </span></code></pre></div></li>
 </ul>
 <div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Expected responses (LoRa EU/ASIA/America)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<blockquote>
-<p>ok</p>
-</blockquote>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>ok
+</span></code></pre></div>
 </div>
 </div>
 </div>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;mac pause\r&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/exp_serial
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;mac pause\r&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/exp_serial
 </span></code></pre></div>
 <div class="tabbed-set tabbed-alternate" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Expected responses (LoRa EU/ASIA/America):</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>Value like: </p>
-<blockquote>
-<p>4294967245</p>
-</blockquote>
+<p>Value like: 
+<div class="language-text highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>4294967245
+</span></code></pre></div></p>
 </div>
 </div>
 </div>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;radio tx AA\r&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/exp_serial
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;radio tx AA\r&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/exp_serial
 </span></code></pre></div>
 <div class="tabbed-set tabbed-alternate" data-tabs="6:1"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Expected responses (LoRa EU/ASIA/America)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="codehilite"><pre><span></span><code><span class="k">&gt; </span><span class="ge">ok</span>
-&gt; 
-<span class="k">&gt; </span><span class="ge">radio_tx_ok</span>
-</code></pre></div>
-
+<div class="language-text highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>ok
+</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>
+</span><span id="__span-36-3"><a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a>radio_tx_ok
+</span></code></pre></div>
 </div>
 </div>
 </div>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;radio rx 0\r&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/exp_serial<span class="w"> </span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;radio rx 0\r&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/exp_serial<span class="w"> </span>
 </span></code></pre></div>
 <div class="tabbed-set tabbed-alternate" data-tabs="7:1"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Expected responses (LoRa EU/ASIA/America)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<blockquote>
-<p>ok</p>
-<p>radio_rx [Byte value received in hexadecimal]</p>
-</blockquote>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>ok
+</span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a>
+</span><span id="__span-38-3"><a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a>radio_rx [Byte value received in hexadecimal]
+</span></code></pre></div>
 </div>
 </div>
 </div>
